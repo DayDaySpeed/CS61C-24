@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 *.sh text eol=lf
 *.c  text eol=lf
 *.h  text eol=lf
 *.bat text eol=crlf
+=======
+* text=auto eol=lf
+>>>>>>> 5ad12dc6c8165195f08c1b00625592a003626abf

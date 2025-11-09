@@ -3,3 +3,26 @@
 # Lines starting with # are comments, feel free to add any to document your commands
 
 # Please add your commands below this line
+# 设置程序启动时自动断在 main 函数
+break main
+
+# 启动程序（使用默认参数）
+run
+
+# 打印当前调用栈
+backtrace
+
+# 打印变量 x 的值（你可以根据你的程序改成你关心的变量）
+print x
+
+# 单步执行一行代码
+step
+
+# 查看当前源代码上下文
+list
+
+# 打印变量 y 的值
+print y
+
+# 继续执行直到下一个断点或程序结束
+continue
