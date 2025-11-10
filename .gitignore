@@ -587,6 +587,7 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
+<<<<<<< HEAD
 ### snake ###
 # Executables
 interactive-snake
@@ -600,3 +601,11 @@ unit-test-*.snk
 
 # Temp files
 *.tmp
+=======
+# Auto-generated assembly files
+test-src/
+
+# Test output files
+output.bin
+*-output.bin
+>>>>>>> a7a1bda2d0eb8bc6cce35cb026f83b28d9d2bbdf

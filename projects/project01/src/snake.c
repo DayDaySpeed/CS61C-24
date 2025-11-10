@@ -41,30 +41,35 @@ int main(int argc, char *argv[]) {
 
   /* Task 7 */
 
-  // Read board from file, or create default board
+  // 📥 读取棋盘：从文件、stdin 或创建默认状态
   if (in_filename != NULL) {
-    // TODO: Load the board from in_filename
-    // TODO: If the file doesn't exist, return -1
-    // TODO: Then call initialize_snakes on the state you made
-    // TODO: close file pointer
+    FILE *fp = fopen(in_filename, "r");
+    if (fp == NULL) {
+      fprintf(stderr, "Error: Cannot open input file %s\n", in_filename);
+      return -1;
+    }
+    state = load_board(fp);              // 从文件读取棋盘
+    state = initialize_snakes(state);    // 初始化蛇信息
+    fclose(fp);                          // 关闭文件
   } else if (io_stdin) {
-    // TODO: Load the board from stdin
-    // TODO: Then call initialize_snakes on the state you made
+    state = load_board(stdin);           // 从标准输入读取棋盘
+    state = initialize_snakes(state);    // 初始化蛇信息
   } else {
-    // TODO: Create default state
+    state = create_default_state();      // 创建默认棋盘和蛇
   }
 
-  // TODO: Update state. Use the deterministic_food function
-  // (already implemented in snake_utils.h) to add food.
+  // 🐍 更新游戏状态：移动蛇、吃果实、死亡判定
+  update_state(state, deterministic_food);
 
-  // Write updated board to file or stdout
+  // 📤 输出棋盘：保存到文件或打印到 stdout
   if (out_filename != NULL) {
-    // TODO: Save the board to out_filename
+    save_board(state, out_filename);     // 保存到指定文件
   } else {
-    // TODO: Print the board to stdout
+    print_board(state, stdout);          // 打印到标准输出
   }
 
-  // TODO: Free the state
+  // 🧹 释放内存
+  free_state(state);
 
   return 0;
 }
