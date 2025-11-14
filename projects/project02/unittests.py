@@ -1,6 +1,6 @@
 import sys
 import unittest
-from projects.project02.framework import AssemblyTest, run_raw_venus, test_asm_dir, _venus_default_args
+from framework import AssemblyTest, run_raw_venus, test_asm_dir, _venus_default_args
 from tools.check_hashes import check_hashes
 
 
